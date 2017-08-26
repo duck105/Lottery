@@ -1,10 +1,10 @@
 class Item < ApplicationRecord
   scope :published, -> {where(hide: false)}
 
-  def self.render
+  def self.render(number)
     items = Item.published
     list = items.flat_map{|x| [x]*(x.amount) }
-    return list.sample
+    return list.sample(number)
   end
 
   def taken

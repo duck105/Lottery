@@ -1,7 +1,10 @@
 <h1>歡迎參加轉蛋</h1>
 <h2>一次10元</h2>
 
-<div class = "button"><%= link_to "開始轉蛋", result_items_path, method: :post %></div>
+<div class = "button"><%= link_to "開始轉蛋", result_items_path(:number => 1), method: :post %></div>
+<div class = "button"><%= link_to "轉蛋 * 2", result_items_path(:number => 2), method: :post %></div>
+<div class = "button"><%= link_to "轉蛋 * 3", result_items_path(:number => 2), method: :post %></div>
+<div class = "button"><%= link_to "轉蛋 * 4", result_items_path(:number => 2), method: :post %></div>
 <div class ="note">
   <h3>可能抽到的獎品有</h3>
   <% @items.each do |i| %>

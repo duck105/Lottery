@@ -3,7 +3,9 @@ class ItemsController < ApplicationController
     @items = Item.published
   end
   def result
-    @item = Item.render
-    @item.taken
+    @items = Item.render(params[:number].to_i)
+    @items.each do |i|
+      i.taken
+    end
   end
 end

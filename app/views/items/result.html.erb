@@ -1,4 +1,6 @@
 <h1>恭喜你獲得了</h1>
-<div class="result"><%= @item.name %></div>
-<div class="button"><%= link_to "再轉一次", result_items_path, method: :post %></div>
+<% @items.each do |item| %>
+  <div class="result"><%= item.name %></div>
+<% end %>
+<div class="button"><%= link_to "再轉一次", result_items_path(:number => 1), method: :post %></div>
 <div class="button"><%= link_to "返回", root_path %></div>
