@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :items
-    resources :logs
+    resources :logs do 
+      member do 
+        post 'rollback'
+      end
+    end
     root to: "items#index"
   end
 

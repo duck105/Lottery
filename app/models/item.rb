@@ -11,4 +11,9 @@ class Item < ApplicationRecord
     self.amount -= 1
     save
   end
+
+  def given
+    self.amount += 1
+    save
+  end
 end
